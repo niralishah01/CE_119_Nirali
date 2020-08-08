@@ -1,0 +1,5 @@
+*commands to generate .netmodule file:
+->csc /t:module addition.cs
+->csc /t:module multiplication.cs
+*command to generate .dll file combining 2 netmodules:
+->csc /t:library /out:calc.dll /addmodule:addition.netmodule /addmodule:multiplication.netmodule
