@@ -1,0 +1,16 @@
+#steps to create strong named assembly calc.dll and deploy it to GAC
+1.create strong named keyfile
+->sn -k mykey.snk
+2.use strong named keyfile to create strong named assembly
+->csc /t:library /keyfile:mykey.snk calc.cs
+3.deploy calc.dll to GAC
+->gacutil -i calc.dll(Administrator mode of developer command pormpt)
+
+#steps to create new version calc.dll and upload to GAC
+*To change version of assembly, write below line in new calc.cs above namespace
+[assembly: AssemblyVersion("1.0.0.0")]
+
+1.create strong named assembly
+->csc /t:library /out:calc.dll /keyfile:mykey.snk calc-new.cs
+2.upload it to GAC
+->gacutil -i calc.dll(Administrator mode of developer command pormpt) 
