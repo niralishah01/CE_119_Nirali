@@ -1,2 +1,0 @@
-This is a example file for git repository
-This is a demo for connecting github with commandline.
